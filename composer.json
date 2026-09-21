@@ -1,0 +1,80 @@
+{
+    "name": "cube-agency/filament-nested-list",
+    "description": "A drag-and-drop nested list form field for Filament, backed by nested sets",
+    "keywords": [
+        "CubeAgency",
+        "laravel",
+        "filament",
+        "filament-plugin",
+        "nested-set",
+        "nested-list",
+        "filament-nested-list"
+    ],
+    "homepage": "https://github.com/cube-agency/filament-nested-list",
+    "support": {
+        "issues": "https://github.com/cube-agency/filament-nested-list/issues",
+        "source": "https://github.com/cube-agency/filament-nested-list"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dmitrijs Mihailovs",
+            "email": "dmitrijs.mihailovs@cube.lv",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "filament/actions": "^4.0|^5.0",
+        "filament/forms": "^4.0|^5.0",
+        "filament/schemas": "^4.0|^5.0",
+        "filament/support": "^4.0|^5.0",
+        "kalnoy/nestedset": "^6.0.5|^7.0",
+        "ryangjchandler/blade-capture-directive": "^1.0",
+        "spatie/laravel-package-tools": "^1.16"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.18",
+        "nunomaduro/collision": "^8.0",
+        "orchestra/testbench": "^9.5|^10.0",
+        "pestphp/pest": "^3.0|^4.0",
+        "pestphp/pest-plugin-laravel": "^3.0|^4.0",
+        "phpstan/extension-installer": "^1.3",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CubeAgency\\FilamentNestedList\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CubeAgency\\FilamentNestedList\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CubeAgency\\FilamentNestedList\\FilamentNestedListServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

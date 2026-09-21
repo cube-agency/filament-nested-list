@@ -1,0 +1,88 @@
+/*
+ * Styles for the nested list field.
+ *
+ * `@reference` makes Tailwind's theme available to `@apply` without emitting any CSS of its own, so
+ * this file compiles to just the component classes below — nothing leaks into the host application.
+ * Shipping them matters on Filament v4+, which no longer includes raw utility classes.
+ */
+@reference 'tailwindcss';
+
+.fi-nested-list {
+    @apply flex flex-col gap-3;
+}
+
+.fi-nested-list-add-ctn {
+    @apply flex;
+}
+
+.fi-nested-list-add-ctn.fi-align-start {
+    @apply justify-start;
+}
+
+.fi-nested-list-add-ctn.fi-align-center {
+    @apply justify-center;
+}
+
+.fi-nested-list-add-ctn.fi-align-end {
+    @apply justify-end;
+}
+
+.fi-nested-list-items {
+    @apply flex flex-col gap-2;
+}
+
+.fi-nested-list-item {
+    @apply flex flex-col gap-2;
+}
+
+.fi-nested-list-item-header {
+    @apply flex items-center justify-between gap-3 rounded-lg bg-white px-3 py-2 shadow-sm ring-1 ring-gray-950/5;
+    @apply dark:bg-gray-900 dark:ring-white/10;
+}
+
+.fi-nested-list-item-label-ctn {
+    @apply flex min-w-0 flex-1 items-center gap-2;
+}
+
+.fi-nested-list-item-handle {
+    @apply flex shrink-0 cursor-grab text-gray-400 dark:text-gray-500;
+}
+
+.fi-nested-list-item-handle-icon {
+    @apply h-5 w-5;
+}
+
+.fi-nested-list-item-label {
+    @apply truncate text-sm font-medium text-gray-950 dark:text-white;
+}
+
+.fi-nested-list-item-prefix,
+.fi-nested-list-item-suffix {
+    @apply flex shrink-0 items-center gap-1 text-sm text-gray-500 dark:text-gray-400;
+}
+
+.fi-nested-list-item-actions {
+    @apply flex shrink-0 items-center gap-1;
+}
+
+.fi-nested-list-item-children {
+    @apply flex flex-col gap-2 ps-8;
+}
+
+/* A leaf's children list is 0px tall, so there is nothing to drop into. */
+.fi-nested-list-item-children-droppable {
+    @apply min-h-3;
+}
+
+.fi-nested-list-empty {
+    @apply flex items-center gap-2 rounded-lg bg-white px-3 py-2 text-sm text-gray-500 ring-1 ring-gray-950/5;
+    @apply dark:bg-gray-900 dark:text-gray-400 dark:ring-white/10;
+}
+
+.fi-nested-list-empty-icon-ctn {
+    @apply rounded-full bg-gray-100 p-1 dark:bg-gray-500/20;
+}
+
+.fi-nested-list-empty-icon {
+    @apply h-5 w-5 text-gray-400 dark:text-gray-500;
+}
